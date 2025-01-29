@@ -75,12 +75,42 @@ while (w < 10) {
 let d = 0;
 do {
   d++;
-  console.log(d);
+  // console.log(d);
 } while (d < 5);
 
 //======== les boucle FOR= pour
 for (const user of data) {
-  document.body.innerHTML += `
-    <li> ${user.pseudo + "," + user.age + " ans"}</li>
-     `;
+  // document.body.innerHTML += `
+  //   <li> ${user.pseudo} - ${user.age} ans</li>
+  //    `;
 }
+// ---------- autre façon de faire la bloucle FOR
+// ---- on declare la valeur de i , jusqu'à la valeur Max, et on increment
+// --- data.length= le nbre d"elemens dans le tableau data
+
+for (i = 0; i < data.length; i++) {
+  // console.log(data[i].pseudo, data[i].age);
+  // document.body.innerHTML += `<li>${data[i].pseudo} - ${data[i].age} </li>
+  // `;
+}
+// ========== boucle switch
+document.body.addEventListener("click", (e) => {
+  console.log(e.target.id);
+  switch (e.target.id) {
+    case "javascript":
+      document.body.style.background = "yellow";
+      break;
+
+    case "php":
+      document.body.style.background = "violet";
+      break;
+
+    case "python":
+      document.body.style.background = "blue";
+      break;
+
+    default:
+      null;
+      break;
+  }
+});
