@@ -114,3 +114,106 @@ document.body.addEventListener("click", (e) => {
       break;
   }
 });
+
+// =======================
+// Les méthodes string
+// =======================
+let string2 = "Javascript est un langage orienté objet";
+// // typeof= permet determiner le type de la variable
+// console.log(typeof string2);
+// // parseInt: permet de convertir chaine de caractère en numerique
+// console.log(parseInt("1"));
+// console.log(eval(parseInt("1")+2));// Eval permet de faire la somme des nombre
+// console.log(string2.length);
+// console.log(string2[string2.length - 1]); // permet de determiner la  derniere cacactere de string2
+// console.log(string2.indexOf("langage"));
+// console.log(string2.indexOf("x"));// il retourne -1 s"il ne trouve pas l'élément
+let newString = string2.slice(2, 5); //slice= permet recuperer les chaine de caractère entre les index 2 et 5;
+// console.log(newString);// resulat= vas
+
+// console.log(string2.split(" "));//split= permet de couper les mot et les ranger dans un tableau
+// console.log(string2.toLowerCase());//toLowerCas= mettre en minuscule
+// console.log(string2.toUpperCase());//toLowerCas= mettre en majuscule
+// console.log(string2.replace("Javascript","PHP"));//replace= permet de remplacer les chaines de caractères
+
+// =======================
+// Les méthodes NUMBERS
+// =======================
+let number2 = 42.123;
+let numberString = " 42.12 est un chiffre 56";
+// console.log(number2.toFixed(1));//toFixed= permet de fixer le nomnbre après virgule
+// console.log(parseInt("43"));//parseInt=transforme les chiffre de type sting en type numer
+// console.log(parseInt(numberString));
+// console.log(parseFloat(numberString));
+
+// ---------- Math
+// console.log(Math.PI);
+// console.log(Math.round(4.5));
+// console.log(Math.floor(4.5));
+// console.log(Math.ceil(4.1));
+// console.log(Math.pow(4,2));
+
+// console.log(Math.random());//random=donne les nombre entre 0 et 1;
+// console.log(Math.random()*50);
+// console.log(Math.floor(Math.random() * 50));
+
+// =======================
+// Les méthodes arrays
+// =======================
+let array3 = ["Javascript", "Php", "Python"];
+let array4 = ["Ruby", "Solidity"];
+let arrayA = ["Windev", "Java"];
+let arrayB = ["Windev", "Windev"];
+let newArray = array3.concat(array4); //concat = permet de concaner les deux tableau
+// let newArray = [...array3, ...array4, ...arrayA];//concat = permet de concaner les tableaux
+// console.log(newArray);
+
+// console.log(array3.join("-"));
+
+// console.log(array3.slice(1));
+// console.log(array3.slice(2,5));
+// console.log(array3.indexOf("Javascript"));
+
+array3.forEach((languges) => {
+  // console.log(languges);
+}); // permert d'enumerer tous les elements d'un tableau
+
+// console.log(arrayB.every((languge)=> languge==="Windev"));// every= permet de verifier si l'element est identique dans le tableau
+
+// let shift = array3.shift();
+// console.log(shift);// shift= permet de retirer le premier element du tableau
+// console.log(array3);
+
+// console.log(array3.pop());// shift= permet de retirer le dermier element du tableau
+// console.log(array3);
+// const restArray = array3.splice(0,1, "C++");
+// console.log(restArray);
+// console.log(array3);
+
+// ======================
+// IMPORTANT
+// ======================
+let arrayNumber = [4, 74, 28, 12, 1];
+// console.log(arrayNumber.reduce((x, y) => x + y))//reduce= faire les calcul des elements;
+arrayNumber.push(17); //push = permet d'ajouter un element dans un tableau
+// console.log(arrayNumber);
+
+// -----------
+// FILTER= filter, SORT= trier, MAP
+// -----------
+// ====== Filter
+// console.log(arrayNumber.filter((number) => number>10));
+// console.log(arrayNumber.filter((number) => number > 10).sort((a, b) => a - b));
+// ====== sort
+// console.log(arrayNumber.sort());
+// console.log(arrayNumber.sort((a,b) => a-b));
+// console.log(arrayNumber.sort((a,b) => b-a));
+
+// ====== MAP
+// arrayNumber.map((number) => console.log(number));
+// arrayNumber.map((number) => (document.body.innerHTML += `
+//   <li>${number}</li>
+//   `));
+document.body.innerHTML += arrayNumber
+  .map((number) => `<li>${number}</li>`)
+  .join("");
