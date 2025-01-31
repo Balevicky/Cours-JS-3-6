@@ -1,3 +1,17 @@
-body{
-    /* background: blue; */
+* {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+
+body {
+  /* background: blue; */
+}
+.user-card {
+  border: 2px solid orange;
+  width: 500px;
+  border-radius: 5px;
+  margin:10px auto;
+ 
+
+
 }

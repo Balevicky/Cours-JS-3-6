@@ -214,6 +214,30 @@ arrayNumber.push(17); //push = permet d'ajouter un element dans un tableau
 // arrayNumber.map((number) => (document.body.innerHTML += `
 //   <li>${number}</li>
 //   `));
-document.body.innerHTML += arrayNumber
-  .map((number) => `<li>${number}</li>`)
+// document.body.innerHTML += arrayNumber
+//   .map((number) => `<li>${number}</li>`)
+//   .join("");
+
+// =======================
+// Les méthodes des Objets
+// =======================
+let backg = document.querySelector(".user-card");
+console.log(backg);
+
+document.body.innerHTML += data
+  .filter((user) => user.pseudo.includes("i"))
+  .filter((user) => user.admin === false)
+  .sort((a, b) => a.age - b.age)
+  .map(
+    (user) =>
+      `
+  <div class="user-card">
+<h2> ${user.pseudo}</h2>
+<p>Age: ${user.age} </p>
+<p> Admin: ${user.admin ? "Moderateur" : "Membre"}</p>
+
+</div>
+`
+  )
   .join("");
+  console.log(backg);
