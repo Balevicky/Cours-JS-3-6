@@ -221,8 +221,8 @@ arrayNumber.push(17); //push = permet d'ajouter un element dans un tableau
 // =======================
 // Les méthodes des Objets
 // =======================
-let backg = document.querySelector(".user-card");
-console.log(backg);
+//// let backg = document.querySelector(".user-card");
+// //console.log(backg);
 
 document.body.innerHTML += data
   .filter((user) => user.pseudo.includes("i"))
@@ -231,13 +231,68 @@ document.body.innerHTML += data
   .map(
     (user) =>
       `
-  <div class="user-card">
-<h2> ${user.pseudo}</h2>
-<p>Age: ${user.age} </p>
-<p> Admin: ${user.admin ? "Moderateur" : "Membre"}</p>
-
-</div>
-`
+    <div class="user-card">
+  <h2> ${user.pseudo}</h2>
+  <p>Age: ${user.age} </p>
+  <p> Admin: ${user.admin ? "Moderateur" : "Membre"}</p>
+  
+  </div>
+  `
   )
   .join("");
-  console.log(backg);
+
+// =======================
+// Les dates
+// =======================
+////=========== Date classique
+let date = new Date();
+// console.log(date);
+// // Timestamp= le temps ecoulé depuis 1970 jusqu'à la date d"aujourd'hui en secondes;
+let Timestamp = Date.parse(date);
+// console.log(Timestamp);
+// // Isotring
+let iso = date.toISOString();
+// console.log(iso);
+
+function dateParser(chaine) {
+  let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+    year: "numeric",
+    // month: "long",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+  return newDate;
+}
+// console.log(dateParser(date));
+// console.log(dateParser(Timestamp));
+// console.log(dateParser(iso));
+
+// =======================
+// Destructuring
+// =======================
+let moreData = {
+  destVar: ["Element 1", "Element 2"],
+};
+const { destVar } = moreData; //cela equivaut à moreData.destVa: appélé destructuration
+// console.log(moreData.destVar);
+// console.log(destVar);
+let array5 = [70, 80, 90];
+let [x, y, z] = array5;
+// console.log(x);
+// console.log(y);
+// console.log(z);
+
+//// on va voir un exemple avec l'heure
+const dateDestructuring = (chaine) => {
+  let newDate = chaine.split("T")[0];
+  let [y, m, d] = newDate.split("-");
+  return [d, m, y].join("/");
+};
+console.log(dateDestructuring(iso));
+
+// =======================
+// Les Datasets
+// =======================
