@@ -296,3 +296,40 @@ console.log(dateDestructuring(iso));
 // =======================
 // Les Datasets
 // =======================
+
+const h3js = document.getElementById("javascript");
+//console.log(h3js.dataset.lang);
+const h3 = document.querySelectorAll("h3");
+// h3.forEach(
+//   // (langage) => console.log(langage.dataset),
+//   (langage) => console.log(langage.dataset.lang)
+// );
+
+// =======================
+// Les Regex
+// =======================
+let mail = "balevictorien@yahoo.fr";
+// console.log(mail.search(/balevictorien@/));
+// console.log(mail.replace(/balevictorien/, "vickyamour"));
+// console.log(mail.match(/Bale/i));
+// console.log(mail.match(/[biug]/)); // permet de savoir si une ou les lettres sont dans "balevictorien@yahoo.fr"
+// console.log(mail.match(/[124]/));
+
+//// matcher tous les chiffres
+// console.log(mail.match(/\d/));
+// console.log(mail.match(/[a-z]/));
+
+//// controler un mail
+// +console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
+
+let separator = 265264849;
+// console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+
+
+
+
+
+
+
+
+
